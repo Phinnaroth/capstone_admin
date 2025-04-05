@@ -23,7 +23,7 @@
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
-                <th>Product ID</th>
+                <th>ID</th>
                 <th>Product Name</th>
                 <th>Skin Type</th>
                 <th>Product Type</th>
@@ -43,12 +43,12 @@
                 <td>{{ $product->MoreDescription }}</td>
                 <td>
                     <div style="display: flex; flex-direction: row; gap: 5px;">
-                        <a href="{{ route('products.edit', $product->ProductID) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ route('products.edit', $product->ProductID) }}" class="btn btn-sm btn-primary">Edit</a>
                         <form action="{{ route('products.destroy', $product->ProductID) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
-                        </form>       
+                        </form>
                     </div>
                 </td>
             </tr>

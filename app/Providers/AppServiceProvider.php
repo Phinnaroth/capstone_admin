@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Setting;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,15 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        view()->composer('layouts.master', function ($view) {
-            $view->with('setting', Setting::first());
-        });
-        view()->composer('layouts.auth', function ($view) {
-            $view->with('setting', Setting::first());
-        });
-        view()->composer('auth.login', function ($view) {
-            $view->with('setting', Setting::first());
-        });
+        // No need to fetch settings here anymore
     }
 
     /**
@@ -32,6 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Share the setting variable with the specified views if the table exists
+        if (Schema::hasTable('settings')) {
+            $setting = Setting::first();
+            View::share('setting', $setting);
+        } else {
+            View::share('setting', null); // Or some default value if needed
+        }
     }
 }

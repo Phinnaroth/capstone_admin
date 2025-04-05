@@ -151,7 +151,7 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button"class="btn btn-secondary" data-dismiss="modal">Remove</button>
+            <button type="reset" class="btn btn-secondary" data-dismiss="modal">Remove</button>
             <button class="btn btn-primary"imary"></i> Add New Product</button>
         </div>
     </form>

@@ -2,18 +2,6 @@
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="{{ url(auth()->user()->foto ?? '') }}" class="img-circle img-profil" alt="User Image">
-            </div>
-            <div class="pull-left info">
-                <p>{{ auth()->user()->name }}</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>
-        
-        <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li>
@@ -31,18 +19,8 @@
             </a>
             </li>
             <li>
-            <a href="{{ route('products.index') }}">
-                <i class="fa fa-users"></i> <span>Users Management</span>
-            </a>
-            </li>
-            <li>
             <a href="{{ route('ingredients.index') }}">
                 <i class="fa fa-flask"></i> <span>Ingredient Management</span>
-            </a>
-            </li>
-            <li>
-            <a href="{{ route('products.index') }}">
-                <i class="fa fa-clipboard"></i> <span>Report & Analytics</span>
             </a>
             </li>
 

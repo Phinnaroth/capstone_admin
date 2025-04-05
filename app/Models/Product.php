@@ -13,7 +13,10 @@ class Product extends Model
 
     protected $table = 'products';
     protected $primaryKey = 'ProductID';
-
+    public function getRouteKeyName()
+    {
+        return 'ProductID';
+    }
     protected $fillable = [
         'ProductName',
         'SkinType',
@@ -34,5 +37,5 @@ class Product extends Model
 
     public $incrementing = true;
     protected $keyType = 'int';
-    public $timestamps = false; 
+    public $timestamps = false;
 }

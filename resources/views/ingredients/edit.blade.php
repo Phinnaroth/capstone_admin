@@ -11,7 +11,7 @@
 @section('content')
     <div class="container mt-4">
         <h2 style="font-size: 2em; margin: 10px; display: flex; align-items: center;">
-            <a href="{{ route('questions.index') }}" style="font-size: 1em; color:rgb(3, 10, 13);display: flex; align-items: center; margin-right: 20px;">
+            <a href="{{ route('ingredients.index') }}" style="font-size: 1em; color:rgb(3, 10, 13);display: flex; align-items: center; margin-right: 20px;">
                 &lt;
             </a>
             Edit Ingredient
@@ -26,19 +26,44 @@
             </div>
             <div class="form-group">
                 <label for="SkinTypeEffect">Skin Type Effect:</label>
-                <input type="text" name="SkinTypeEffect" id="SkinTypeEffect" class="form-control" value="{{ $ingredient->SkinTypeEffect }}">
+                <select name="SkinTypeEffect[]" id="SkinTypeEffect" class="form-control" multiple>
+                    @php
+                        $selectedSkinTypes = explode(',', $ingredient->SkinTypeEffect);
+                    @endphp
+                    <option value="Combination" {{ in_array('Combination', $selectedSkinTypes) ? 'selected' : '' }}>Combination</option>
+                    <option value="Normal" {{ in_array('Normal', $selectedSkinTypes) ? 'selected' : '' }}>Normal</option>
+                    <option value="Sensitive" {{ in_array('Sensitive', $selectedSkinTypes) ? 'selected' : '' }}>Sensitive</option>
+                    <option value="Oily" {{ in_array('Oily', $selectedSkinTypes) ? 'selected' : '' }}>Oily</option>
+                    <option value="Dry" {{ in_array('Dry', $selectedSkinTypes) ? 'selected' : '' }}>Dry</option>
+                    <option value="None" {{ in_array('None', $selectedSkinTypes) ? 'selected' : '' }}>None</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="AcneEffect">Acne Effect:</label>
-                <input type="text" name="AcneEffect" id="AcneEffect" class="form-control" value="{{ $ingredient->AcneEffect }}">
+                <select name="AcneEffect" id="AcneEffect" class="form-control">
+                    <option value="">-- Select Effect --</option>
+                    <option value="Beneficial" {{ $ingredient->AcneEffect == 'Beneficial' ? 'selected' : '' }}>Beneficial</option>
+                    <option value="Neutral" {{ $ingredient->AcneEffect == 'Neutral' ? 'selected' : '' }}>Neutral</option>
+                    <option value="Harmful" {{ $ingredient->AcneEffect == 'Harmful' ? 'selected' : '' }}>Harmful</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="DarkSpotsEffect">Dark Spots Effect:</label>
-                <input type="text" name="DarkSpotsEffect" id="DarkSpotsEffect" class="form-control" value="{{ $ingredient->DarkSpotsEffect }}">
+                <select name="DarkSpotsEffect" id="DarkSpotsEffect" class="form-control">
+                    <option value="">-- Select Effect --</option>
+                    <option value="Beneficial" {{ $ingredient->DarkSpotsEffect == 'Beneficial' ? 'selected' : '' }}>Beneficial</option>
+                    <option value="Neutral" {{ $ingredient->DarkSpotsEffect == 'Neutral' ? 'selected' : '' }}>Neutral</option>
+                    <option value="Harmful" {{ $ingredient->DarkSpotsEffect == 'Harmful' ? 'selected' : '' }}>Harmful</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="LargePoresEffect">Large Pores Effect:</label>
-                <input type="text" name="LargePoresEffect" id="LargePoresEffect" class="form-control" value="{{ $ingredient->LargePoresEffect }}">
+                <select name="LargePoresEffect" id="LargePoresEffect" class="form-control">
+                    <option value="">-- Select Effect --</option>
+                    <option value="Beneficial" {{ $ingredient->LargePoresEffect == 'Beneficial' ? 'selected' : '' }}>Beneficial</option>
+                    <option value="Neutral" {{ $ingredient->LargePoresEffect == 'Neutral' ? 'selected' : '' }}>Neutral</option>
+                    <option value="Harmful" {{ $ingredient->LargePoresEffect == 'Harmful' ? 'selected' : '' }}>Harmful</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="Description">Description:</label>

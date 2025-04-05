@@ -19,7 +19,7 @@ class UserTableSeeder extends Seeder
                 'UserName' => 'Administrator', // Changed 'name' to 'UserName'
                 'Email' => 'admin@mail.com',    // Changed 'email' to 'Email'
                 'password' => bcrypt('12345'),
-                // Removed 'level' => 1,
+                'photo' => 'img/user.png', 
             ],
         ];
 
