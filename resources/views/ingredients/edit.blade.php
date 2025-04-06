@@ -70,7 +70,7 @@
                 <textarea name="Description" id="Description" class="form-control">{{ $ingredient->Description }}</textarea>
             </div>
             <div class="modal-footer">
-                <button type="button"class="btn btn-secondary" data-dismiss="modal">Remove</button>
+                <a href="{{ route('ingredients.index') }}" class="btn btn-secondary">Cancel</a>
                 <button class="btn btn-primary"imary"></i> Update Ingredient</button>
             </div>
         </form>

@@ -3,6 +3,9 @@
         <span class="logo-lg"><b>GlowMatch</b></span>
     </a>
     <nav class="navbar navbar-static-top">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
@@ -14,9 +17,6 @@
                             <img src="{{ asset(auth()->user()->foto ?? 'img/user.png') }}" class="img-circle img-profil" alt="User Image">
                         </li>
                         <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="{{ route('user.profil') }}" class="btn btn-primary btn-flat">My Profile</a>
-                            </div>
                             <div class="pull-right">
                                 <a href="#" class="btn btn-danger btn-flat"
                                    onclick="$('#logout-form').submit()"><i class="fa fa-power-off"></i> Logout</a>

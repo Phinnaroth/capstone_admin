@@ -176,7 +176,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="reset"class="btn btn-secondary" data-dismiss="modal">Remove</button>
+                    <a href="{{ route('products.index') }}" class="btn btn-secondary">Cancel</a>
                     <button class="btn btn-primary"imary"></i> Edit</button>
                 </div>
             </form>
