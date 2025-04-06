@@ -168,9 +168,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="ProductBenefits">Product Benefits</label>
-                        <textarea class="form-control" id="ProductBenefits" name="ProductBenefits" rows="3">{{ $product->ProductBenefits }}</textarea>
-                        @error('ProductBenefits')
+                        <label for="ProductDetails">Product Details</label>
+                        <textarea class="form-control" id="ProductDetails" name="ProductDetails" rows="3">{{ $product->ProductDetails }}</textarea>
+                        @error('ProductDetails')
+                            <span class="help-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ProductDetails">Product Details</label>
+                        <textarea class="form-control" id="ProductDetails" name="ProductDetails" rows="3">{{ $product->ProductDetails }}</textarea>
+                        @error('ProductDetails')
                             <span class="help-block">{{ $message }}</span>
                         @enderror
                     </div>

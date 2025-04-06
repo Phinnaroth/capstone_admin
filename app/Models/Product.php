@@ -32,6 +32,7 @@ class Product extends Model
         'MoreDescription',
         'ProductDetails',
         'TextureImage',
+        'ProductDetails',
         'ProductBenefits',
     ];
 

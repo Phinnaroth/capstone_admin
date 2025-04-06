@@ -146,6 +146,10 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="ProductDetails">Product Details</label>
+            <textarea name="ProductDetails" id="ProductDetails" class="form-control" rows="3" placeholder="Product Details"></textarea>
+        </div>
+        <div class="form-group">
             <label for="ProductBenefits">Product Benefits</label>
             <textarea name="ProductBenefits" id="ProductBenefits" class="form-control" rows="3" placeholder="Product Benefits"></textarea>
         </div>
